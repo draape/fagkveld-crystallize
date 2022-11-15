@@ -27,6 +27,8 @@ jspm_packages/
 # Files containing sensitive variables
 .env.*
 
+.env
+
 # Vercel deployment settings
 .vercel
 
