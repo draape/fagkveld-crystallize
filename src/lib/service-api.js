@@ -7,14 +7,17 @@ export default async function serviceApi({
 
   console.log('Calling service api with uri', uri);
 
-  const response = await fetch(uri, {
-    method: 'post',
-    headers: {
-      'content-type': 'application/json'
-    },
-    credentials: 'include',
-    body
-  });
+  const response = await fetch(
+    'https://service-api-demo.superfast.shop/api/graphql',
+    {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      },
+      credentials: 'include',
+      body
+    }
+  );
 
   if (!response.ok) {
     throw new Error(await response.text());

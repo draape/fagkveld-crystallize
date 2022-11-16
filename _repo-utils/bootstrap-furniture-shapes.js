@@ -232,7 +232,7 @@ const shapesToInject = [Banner, Article, Folder, Product, Collection];
 
 async function simplyFetchFromGraph({ uri = coreUrl, query, variables }) {
   const body = JSON.stringify({ query, variables });
-  const response = await fetch(uri, {
+  const response = await fetch('https://pim.crystallize.com/graphql', {
     method: 'post',
     headers: {
       'content-type': 'application/json',
