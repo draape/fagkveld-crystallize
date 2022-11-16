@@ -36,7 +36,7 @@ export function safePathQuery({ variables, ...rest }) {
  * Read more about authentication for the APIs here:
  * https://crystallize.com/learn/developer-guides/api-overview/authentication
  */
-const apiUrlBase = `https://api.crystallize.com/${process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER}`;
+const apiUrlBase = `https://api.crystallize.com/kxo-swag`;
 
 export async function simplyFetchFromGraph({
   uri = `${apiUrlBase}/catalogue`,

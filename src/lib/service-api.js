@@ -1,5 +1,5 @@
 export default async function serviceApi({
-  uri = process.env.NEXT_PUBLIC_SERVICE_API_URL,
+  uri = 'https://service-api-demo.superfast.shop/api/graphql',
   query,
   variables
 }) {

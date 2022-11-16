@@ -38,9 +38,7 @@ export default function Layout({
   preview
 }) {
   const router = useRouter();
-  const headTilte = title
-    ? `${title} | ${process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER}`
-    : `${process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER}`;
+  const headTilte = title ? `${title} | kxo-swag` : `kxo-swag`;
 
   //@TODO add url to .env
   const siteUrl = null;
