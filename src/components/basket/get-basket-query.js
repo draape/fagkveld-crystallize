@@ -1,4 +1,4 @@
-// TODO basket query, remove and hint?
+// TODO 03 - show cart
 
 // Oppgave - Hente ut produktdetaljer til handlevogn
 // Hint - query som brukes til å hente ut fra api
