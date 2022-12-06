@@ -57,24 +57,9 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
           // payment_intent.succeeded event that handles any business critical
           // post-payment actions.
 
-          // TODO Skrive mutation for confirmOrder
+          //  confirmOrder
           const response = await ServiceApi({
-            query: `
-              mutation confirmStripeOrder($checkoutModel: CheckoutModelInput!, $paymentIntentId: String!) {
-                paymentProviders {
-                  stripe {
-                    confirmOrder(checkoutModel: $checkoutModel, paymentIntentId: $paymentIntentId) {
-                      success
-                      orderId
-                    }
-                  }
-                }
-              }
-            `,
-            variables: {
-              checkoutModel,
-              paymentIntentId: paymentIntent.id
-            }
+            query: ``
           });
 
           const {
@@ -111,18 +96,8 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
 export default function StripeWrapper({ checkoutModel, ...props }) {
   const [stripeLoader, setStripeLoader] = useState(null);
   const stripeConfig = useQuery('stripeConfig', () =>
-    // TODO fjerne query og hinte om paymentProviders?
-    // Hint - paymentProviders (hvor?)
     ServiceApi({
-      query: `
-      {
-        paymentProviders {
-          stripe {
-            config
-          }
-        }
-      }
-    `
+      query: ``
     })
   );
 
