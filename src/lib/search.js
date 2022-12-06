@@ -1,5 +1,7 @@
 import produce from 'immer';
 
+// TODO 01 - list products
+
 export const SEARCH_QUERY = `
   query CATALOGUE_SEARCH (
     $first: Int
