@@ -25,10 +25,6 @@ import {
 import Voucher from '../voucher';
 
 const StripeCheckout = dynamic(() => import('./stripe'));
-const KlarnaCheckout = dynamic(() => import('./klarna'));
-const VippsCheckout = dynamic(() => import('./vipps'));
-const MollieCheckout = dynamic(() => import('./mollie'));
-const PaypalCheckout = dynamic(() => import('./paypal'));
 
 const Row = styled.div`
   display: flex;
@@ -54,18 +50,6 @@ export default function Payment() {
       {
         paymentProviders {
           stripe {
-            enabled
-          }
-          klarna {
-            enabled
-          }
-          mollie {
-            enabled
-          }
-          vipps {
-            enabled
-          }
-          paypal {
             enabled
           }
         }
@@ -129,94 +113,14 @@ export default function Payment() {
           />
         </PaymentProvider>
       )
-    },
-    {
-      name: 'klarna',
-      color: '#F8AEC2',
-      logo: '/static/klarna-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <KlarnaCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            getURL={getURL}
-          />
-        </PaymentProvider>
-      )
-    },
-    {
-      name: 'vipps',
-      color: '#fff',
-      logo: '/static/vipps-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <VippsCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            onSuccess={(url) => {
-              if (url) window.location = url;
-            }}
-          />
-        </PaymentProvider>
-      )
-    },
-    {
-      name: 'mollie',
-      color: '#fff',
-      logo: '/static/mollie-vector-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <MollieCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            onSuccess={(url) => {
-              if (url) window.location = url;
-            }}
-          />
-        </PaymentProvider>
-      )
-    },
-    {
-      name: 'paypal',
-      color: '#fff',
-      logo: '/static/paypal-logo.png',
-      render: () => (
-        <PaymentProvider>
-          <PaypalCheckout
-            checkoutModel={checkoutModel}
-            basketActions={actions}
-            onSuccess={(crystallizeOrderId) => {
-              router.push(
-                checkoutModel.confirmationURL.replace(
-                  '{crystallizeOrderId}',
-                  crystallizeOrderId
-                )
-              );
-              scrollTo(0, 0);
-            }}
-          ></PaypalCheckout>
-        </PaymentProvider>
-      )
     }
   ];
 
   const enabledPaymentProviders = [];
   if (!paymentConfig.loading && paymentConfig.data) {
     const { paymentProviders } = paymentConfig.data.data;
-    if (paymentProviders.klarna.enabled) {
-      enabledPaymentProviders.push('klarna');
-    }
-    if (paymentProviders.mollie.enabled) {
-      enabledPaymentProviders.push('mollie');
-    }
-    if (paymentProviders.vipps.enabled) {
-      enabledPaymentProviders.push('vipps');
-    }
     if (paymentProviders.stripe.enabled) {
       enabledPaymentProviders.push('stripe');
-    }
-    if (paymentProviders.paypal.enabled) {
-      enabledPaymentProviders.push('paypal');
     }
   }
 

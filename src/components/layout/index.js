@@ -40,7 +40,6 @@ export default function Layout({
   const router = useRouter();
   const headTilte = title ? `${title} | kxo-swag` : `kxo-swag`;
 
-  //@TODO add url to .env
   const siteUrl = null;
   return (
     <>

@@ -1,6 +1,22 @@
+// TODO basket query, remove and hint?
+
+// Oppgave - Hente ut produktdetaljer til handlevogn
+// Hint - query som brukes til å hente ut fra api
+// Hint - $basketModel: BasketModelInput!
+// Hint - service api
+
+/*
+locale,
+      cart: clientBasket.cart.map(clientCartItemForAPI),
+      voucherCode: clientBasket.voucherCode,
+      crystallizeOrderId: clientBasket.crystallizeOrderId,
+      klarnaOrderId: clientBasket.klarnaOrderId
+*/
+
 const GET_BASKET_QUERY = `
   query getServerBasket($basketModel: BasketModelInput!) {
     basket(basketModel: $basketModel) {
+      
       total {
         gross
         net
@@ -33,6 +49,7 @@ const GET_BASKET_QUERY = `
           }
         }
       }
+
     }
   }
 `;

@@ -117,12 +117,7 @@ export default produce(function reducer(draft, { action, ...rest }) {
         }
       } else {
         if (!['remove-item', 'decrement-item'].includes(action)) {
-          draft.clientBasket.cart.push({
-            sku,
-            path,
-            priceVariantIdentifier,
-            quantity: 1
-          });
+          // TODO add to cart (draft.clientBasket.cart)
         }
       }
 

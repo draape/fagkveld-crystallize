@@ -24,6 +24,8 @@ export async function getData({ asPath, preview, language, searchSpec }) {
       : {}
   ]);
 
+  console.log('response', searchQueryResponse);
+
   if (!searchQueryResponse.data) {
     return {
       search: null,

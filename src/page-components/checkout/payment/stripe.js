@@ -56,6 +56,8 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
           // execution. Set up a webhook or plugin to listen for the
           // payment_intent.succeeded event that handles any business critical
           // post-payment actions.
+
+          // TODO Skrive mutation for confirmOrder
           const response = await ServiceApi({
             query: `
               mutation confirmStripeOrder($checkoutModel: CheckoutModelInput!, $paymentIntentId: String!) {
@@ -109,6 +111,8 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
 export default function StripeWrapper({ checkoutModel, ...props }) {
   const [stripeLoader, setStripeLoader] = useState(null);
   const stripeConfig = useQuery('stripeConfig', () =>
+    // TODO fjerne query og hinte om paymentProviders?
+    // Hint - paymentProviders (hvor?)
     ServiceApi({
       query: `
       {

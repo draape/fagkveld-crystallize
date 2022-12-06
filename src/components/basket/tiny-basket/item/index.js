@@ -73,6 +73,8 @@ export default function TinyBasketItem({ item }) {
     );
   }
 
+  // TODO rendering of basket
+
   return (
     <Item animate={drawAttention}>
       <ItemImage {...images?.[0]} />

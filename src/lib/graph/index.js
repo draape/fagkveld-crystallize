@@ -43,18 +43,16 @@ export async function simplyFetchFromGraph({
   query,
   variables
 }) {
+  console.log('simply fetch from graph');
   const body = JSON.stringify(safePathQuery({ query, variables }));
 
-  const response = await fetch(
-    `https://api.crystallize.com/kxo-swag/catalogue`,
-    {
-      method: 'post',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body
-    }
-  );
+  const response = await fetch(uri, {
+    method: 'post',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body
+  });
 
   if (!response.ok) {
     throw new Error(await response.text());
