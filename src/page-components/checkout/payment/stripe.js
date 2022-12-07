@@ -57,7 +57,7 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
           // payment_intent.succeeded event that handles any business critical
           // post-payment actions.
 
-          //  confirmOrder
+          // TODO 05 - place order
           const response = await ServiceApi({
             query: ``
           });
@@ -96,6 +96,8 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
 export default function StripeWrapper({ checkoutModel, ...props }) {
   const [stripeLoader, setStripeLoader] = useState(null);
   const stripeConfig = useQuery('stripeConfig', () =>
+    // TODO 04 - load payment provider
+
     ServiceApi({
       query: ``
     })
