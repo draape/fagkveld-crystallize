@@ -57,7 +57,6 @@ function childrenIsMostlyProducts(children) {
  * with this url as path.
  */
 export async function getStaticProps(context) {
-  console.log('get static props');
   const { params, preview } = context;
   const { catalogue } = params;
   const locale = getLocaleFromContext(context);
