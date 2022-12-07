@@ -24,8 +24,6 @@ export async function getData({ asPath, preview, language, searchSpec }) {
       : {}
   ]);
 
-  console.log('response', searchQueryResponse);
-
   if (!searchQueryResponse.data) {
     return {
       search: null,
@@ -34,15 +32,11 @@ export async function getData({ asPath, preview, language, searchSpec }) {
     };
   }
 
-  const {
-    search,
-    aggregations: { aggregations } = {}
-  } = searchQueryResponse.data;
+  const { search } = searchQueryResponse.data;
 
   return {
     search: {
-      search,
-      aggregations
+      search
     },
     catalogue: catalogueQueryResponse.data || null,
     language

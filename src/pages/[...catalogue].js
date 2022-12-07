@@ -85,8 +85,6 @@ export async function getStaticProps(context) {
       }
     });
 
-    console.log('type', getItemType);
-
     // Item not found for path. It's a 404
     if (!getItemType.data.catalogue) {
       return {
@@ -100,8 +98,6 @@ export async function getStaticProps(context) {
       nextI18NextConfig
     );
 
-    console.log('translations', translations);
-
     const { type, children } = getItemType.data.catalogue;
 
     let renderer = 'folder';
@@ -111,7 +107,6 @@ export async function getStaticProps(context) {
       renderer = type;
     }
 
-    console.log('renderer', renderer);
     const data = await renderers[renderer].getData({
       asPath,
       language: locale.crystallizeCatalogueLanguage,
@@ -144,7 +139,6 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths({ locales, defaultLocale }) {
-  console.log('get static paths');
   const paths = [];
 
   await Promise.all((locales || ['en']).map(handleLocale));

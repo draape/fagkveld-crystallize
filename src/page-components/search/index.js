@@ -34,11 +34,10 @@ async function loadPage(spec) {
     }
   });
 
-  const { search, aggregations: { aggregations } = {} } = data || {};
+  const { search } = data || {};
 
   return {
-    search,
-    aggregations
+    search
   };
 }
 
@@ -174,17 +173,6 @@ export default function SearchPage(props) {
         <PageHeader {...{ title, description }} />
         <Stackable stacks={stacks} />
         <ListOuter>
-          <SearchActions>
-            <Facets
-              aggregations={data.aggregations}
-              spec={spec}
-              changeQuery={changeQuery}
-              totalResults={totalResults}
-            />
-            <LocateRight>
-              <OrderBy orderBy={spec.orderBy} onChange={handleOrderByChange} />
-            </LocateRight>
-          </SearchActions>
           <SearchCount count={totalResults} />
           <Results {...data.search} spec={spec} navigate={navigate} />
         </ListOuter>

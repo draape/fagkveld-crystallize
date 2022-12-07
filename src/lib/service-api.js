@@ -5,8 +5,6 @@ export default async function serviceApi({
 }) {
   const body = JSON.stringify({ query, variables });
 
-  console.log('Calling service api with uri', uri);
-
   const response = await fetch(
     'https://service-api-demo.superfast.shop/api/graphql',
     {
