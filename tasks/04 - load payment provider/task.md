@@ -8,6 +8,6 @@ query!
 
 ## Resources
 
-- [Go to code](https://github.com/draape/fagkveld-crystallize/blob/297031193b9b0c85c7abbc1625608b2c0fa712a5/src/page-components/checkout/payment/stripe.js#L99)
+- [Go to code](https://github.com/draape/fagkveld-crystallize/blob/953df05b6b493a3c18134694813c52b8e1257689/src/page-components/checkout/payment/stripe.js#L99)
 - [Hint 1](hint1.md)
 - [Solution](solution.md)
