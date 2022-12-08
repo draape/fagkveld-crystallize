@@ -43,7 +43,6 @@ export async function simplyFetchFromGraph({
   query,
   variables
 }) {
-  console.log('simply fetch from graph');
   const body = JSON.stringify(safePathQuery({ query, variables }));
 
   const response = await fetch(uri, {

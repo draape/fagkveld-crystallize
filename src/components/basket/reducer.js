@@ -130,16 +130,6 @@ export default produce(function reducer(draft, { action, ...rest }) {
       draft.serverBasket = rest.serverBasket;
       draft.status = 'ready';
 
-      /**
-       * If running against the Service API demo, we can only
-       * add products that are registered for the demo Crystallize
-       * tenant, furniture.
-       */
-      // if (
-      //   process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_IDENTIFIER !== 'furniture' &&
-      //   process.env.NEXT_PUBLIC_SERVICE_API_URL ===
-      //     'https://service-api-demo.superfast.shop/api/graphql'
-      // ) {
       draft.clientBasket.cart = draft.serverBasket.cart.map(
         ({ sku, path, quantity }) => ({
           sku,
@@ -148,7 +138,6 @@ export default produce(function reducer(draft, { action, ...rest }) {
           priceVariantIdentifier: 'default'
         })
       );
-      // }
 
       break;
     }
