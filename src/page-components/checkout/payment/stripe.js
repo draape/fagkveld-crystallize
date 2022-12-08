@@ -57,7 +57,7 @@ function Form({ stripeClientSecret, checkoutModel, onSuccess, onError }) {
           // payment_intent.succeeded event that handles any business critical
           // post-payment actions.
 
-          // TODO 05 - place order
+          // TODO 06 - place order
           const response = await ServiceApi({
             query: ``
           });
@@ -115,6 +115,7 @@ export default function StripeWrapper({ checkoutModel, ...props }) {
 
   // Get new paymentIntent
   const stripePaymentIntent = useQuery('stripePaymentIntent', () =>
+    // TODO 05 - payment intent
     ServiceApi({
       query: `
         
