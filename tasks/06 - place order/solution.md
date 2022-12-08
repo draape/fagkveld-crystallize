@@ -1,6 +1,6 @@
-# Solution:
+[Back](task.md)
 
-## part1: src\page-components\checkout\payment\stripe.js:
+# src\page-components\checkout\payment\stripe.js:
 
 ```
  const response = await ServiceApi({
@@ -22,25 +22,3 @@
     }
  });
 ```
-
-
-## part2: src\page-components\checkout\payment\stripe.js:
-```
-const stripeConfig = useQuery('stripeConfig', () =>
-    
-    ServiceApi({
-      query: `
-      {
-        paymentProviders {
-          stripe {
-            config
-          }
-        }
-      }
-    `
-    })
-  );
-```
-
-## make sure you're using valid test cards: 
-valid test cards: https://stripe.com/docs/testing
