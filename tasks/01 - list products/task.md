@@ -11,7 +11,7 @@ You can test the search api in
 
 ## Resources
 
-- [Go to code](https://github.com/draape/fagkveld-crystallize/blob/e32e3bc1728782fe424bb6d77a9fdd576c9cc11a/src/lib/search.js#L3)
+- [Go to code](https://github.com/draape/fagkveld-crystallize/blob/bccab76dd22a67854ac7819d21306091e8845d43/src/lib/search.js#L5)
 - [Hint 1](hint1.md)
 - [Hint 2](hint2.md)
 - [Hint 3](hint3.md)
